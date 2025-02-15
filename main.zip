@@ -1,0 +1,27 @@
+from policyholder import Policyholder
+from product import Product
+from payment import Payment
+
+# Create insurance products
+product1 = Product(1, "Health Insurance", "Comprehensive health coverage", 50000)
+product2 = Product(2, "Car Insurance", "Coverage for vehicle damage", 70000)
+
+# Create policyholders
+policyholder1 = Policyholder(101, "Maruf Ajimati")
+policyholder2 = Policyholder(102, "Bob Williams")
+
+# Assign products to policyholders and process payments
+payment1 = Payment(policyholder1.policy_id, product1.product_id, product1.price)
+payment2 = Payment(policyholder2.policy_id, product2.product_id, product2.price)
+
+payment1.process_payment()  # Alice completes payment
+payment2.process_payment()  # Bob completes payment
+
+# Display policyholder details
+print("\nPolicyholder 1 Details:")
+print(policyholder1.display_details())
+print("Payment Details:", payment1.get_payment_details())
+
+print("\nPolicyholder 2 Details:")
+print(policyholder2.display_details())
+print("Payment Details:", payment2.get_payment_details())

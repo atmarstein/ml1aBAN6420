@@ -1,0 +1,17 @@
+class Product:
+    def __init__(self, product_id, name, description, price):
+        self.product_id = product_id
+        self.name = name
+        self.description = description
+        self.price = price
+
+    def update_product(self, name=None, description=None, price=None):
+        if name:
+            self.name = name
+        if description:
+            self.description = description
+        if price:
+            self.price = price
+
+    def display_details(self):
+        return f"Product: {self.name}, ID: {self.product_id}, Description: {self.description}, Price: {self.price}"

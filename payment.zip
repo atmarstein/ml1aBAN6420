@@ -1,0 +1,14 @@
+class Payment:
+    def __init__(self, policyholder_id, product_id, amount):
+        self.policyholder_id = policyholder_id
+        self.product_id = product_id
+        self.amount = amount
+        self.paid = False
+
+    def process_payment(self):
+        self.paid = True
+        print(f"Payment of {self.amount} for Policyholder ID {self.policyholder_id} is completed.")
+
+    def get_payment_details(self):
+        status = "Paid" if self.paid else "Pending"
+        return f"Policyholder ID: {self.policyholder_id}, Product ID: {self.product_id}, Amount: {self.amount}, Status: {status}"

@@ -1,0 +1,17 @@
+class Policyholder:
+    def __init__(self, policy_id, name):
+        self.policy_id = policy_id
+        self.name = name
+        self.active = True
+
+    def suspend(self):
+        self.active = False
+        print(f"Policyholder {self.name} (ID: {self.policy_id}) has been suspended.")
+
+    def reactivate(self):
+        self.active = True
+        print(f"Policyholder {self.name} (ID: {self.policy_id}) has been reactivated.")
+
+    def display_details(self):
+        status = "Active" if self.active else "Suspended"
+        return f"Policyholder: {self.name}, ID: {self.policy_id}, Status: {status}"
